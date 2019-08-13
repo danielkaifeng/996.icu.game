@@ -12,4 +12,31 @@ Instead of calling it a game, I would rather name it as an worker-hirer simulati
 5. worker的工作年限、技能等属性影响其收入水平。
 
 
+### demo running result
+**company report**
 
+staff NUM | fortune | hr_stat
+:-: | :-: | :-: 
+1 | ￥918000 |{'recruit': 12, 'onboard': 4, 'leave': 2}
+1 | ￥310000 |{'recruit': 13, 'onboard': 10, 'leave': 7}
+2 | ￥820000 |{'recruit': 14, 'onboard': 6, 'leave': 1}
+5 | ￥241000 |{'recruit': 11, 'onboard': 9, 'leave': 4}
+4 | ￥597000 |{'recruit': 12, 'onboard': 6, 'leave': 1}
+
+**workers report**
+
+job_type | experience | salary | fortune
+:- | :-: | :-: |:-: 
+sales | 5year | ￥12000  | ￥570000 
+engineer | 5year | ￥12000  | ￥668000 
+sales | 5year | ￥12000  | ￥514000 
+HR | 5year | ￥11000  | ￥561000 
+web | 2year | ￥11000  | ￥363000 
+engineer | 3year | ￥11000  | ￥475000 
+sales | 5year | ￥9000  | ￥474000 
+engineer | 2year | ￥11000  | ￥230000 
+engineer | 1year | ￥7000  | ￥105000 
+engineer | 1year | ￥7000  | ￥85000 
+sales | 0year | ￥5000  | ￥15000 
+web | 1year | ￥10000  | ￥112000 
+HR | 4year | ￥11000  | ￥414000 
