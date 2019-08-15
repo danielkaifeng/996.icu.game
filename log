@@ -1,0 +1,48 @@
+year: 0, JOB NUM: 0, WORKER NUM: 20, unemployment: 20
+year: 1, JOB NUM: 38, WORKER NUM: 23, unemployment: 12
+year: 2, JOB NUM: 64, WORKER NUM: 34, unemployment: 16
+year: 3, JOB NUM: 81, WORKER NUM: 39, unemployment: 19
+year: 4, JOB NUM: 93, WORKER NUM: 43, unemployment: 21
+year: 5, JOB NUM: 106, WORKER NUM: 45, unemployment: 21
+**company report**
+
+staff NUM | fortune | hr_stat
+:-: | :-: | :-: 
+6 | ￥419500 |{'recruit': 34, 'onboard': 25, 'leave': 17}
+7 | ￥-41000 |{'recruit': 30, 'onboard': 27, 'leave': 19}
+7 | ￥568000 |{'recruit': 30, 'onboard': 24, 'leave': 15}
+2 | ￥-130500 |{'recruit': 28, 'onboard': 22, 'leave': 20}
+5 | ￥-363500 |{'recruit': 31, 'onboard': 26, 'leave': 18}
+
+**workers report**
+
+job_type | experience | salary | fortune
+:- | :-: | :-: |:-: 
+HR | 5y | ￥10500  | ￥480000 
+HR | 5y | ￥9000  | ￥423000 
+HR | 5y | ￥9000  | ￥412500 
+HR | 2y | ￥7500  | ￥189000 
+HR | 0y | ￥4000  | ￥8000 
+engineer | 5y | ￥15000  | ￥737500 
+engineer | 5y | ￥13500  | ￥685500 
+engineer | 4y | ￥13500  | ￥565500 
+engineer | 4y | ￥13500  | ￥554500 
+engineer | 4y | ￥12000  | ￥518000 
+engineer | 4y | ￥12000  | ￥467000 
+engineer | 3y | ￥12000  | ￥388500 
+engineer | 3y | ￥12000  | ￥382500 
+engineer | 3y | ￥12000  | ￥350500 
+engineer | 3y | ￥12000  | ￥307500 
+engineer | 1y | ￥12000  | ￥193500 
+engineer | 0y | ￥10500  | ￥94500 
+sales | 5y | ￥12000  | ￥565000 
+sales | 4y | ￥12000  | ￥475500 
+sales | 2y | ￥12000  | ￥316500 
+sales | 0y | ￥6000  | ￥36000 
+sales | 0y | ￥6000  | ￥36000 
+web | 5y | ￥7500  | ￥421500 
+web | 4y | ￥7500  | ￥330500 
+web | 4y | ￥7000  | ￥265500 
+web | 3y | ￥5500  | ￥220000 
+web | 0y | ￥4000  | ￥12000 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

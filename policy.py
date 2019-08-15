@@ -1,9 +1,12 @@
 from simulation.worker import worker
 from simulation.hirer import hirer
+import numpy as np
 import random
 
 JOB_TYPES = ["engineer", "HR", "sales", "web"]
-WORKER_NUM = 10
+JOB_PROB = [4, 1, 2, 1]
+JOB_PROB = np.array(JOB_PROB) /sum(JOB_PROB)
+WORKER_NUM = 20
 HIRER_NUM = 5
 
 class world():
@@ -11,6 +14,7 @@ class world():
 	def __init__(self):
 		self.workers = self.init_workers()
 		self.hirers = self.init_hirers()
+		self.worker_expectation = None
 		self.jobs_list = []
 		self.task_pool = []
 		self.task_id = 0
@@ -33,10 +37,13 @@ class world():
 
 	def update(self, step):
 		if step % 30 == 0:
-			#random generate task and worker
+			self.worker_expectation = dict((x,[]) for x in JOB_TYPES)
+		if step % 10 == 0:
 			self.update_task_pool()
-			#if step % 200 == 0:
-			#	print("JOB NUM: %d, WORKER NUM: %d" % (len(self.jobs_list), len(self.workers)) )
+			#random generate task and worker
+		if step % 365 == 0:
+			print("> year: %d, JOB NUM: %d, WORKER NUM: %d, unemployment: %d" % (step//365, len(self.jobs_list), len(self.workers), 
+									len([x for x in self.workers.values() if x.job is None])))
 
 		if random.randint(0,50) == 1:
 			job_type = random.choice(JOB_TYPES)
@@ -47,7 +54,7 @@ class world():
 		random.shuffle(companys)
 		for employer in companys:
 			if len(self.task_pool) > 0:
-				self.task_pool, jobs = employer.recruit(self.task_pool)
+				self.task_pool, jobs = employer.recruit(self.task_pool, self.worker_expectation)
 				self.jobs_list += jobs
 				
 			#company monthly update
@@ -57,8 +64,9 @@ class world():
 		for wid, person in self.workers.items():
 			self.career_policy(person)
 			#person.update()
-			if step % 30 == 0 and person.job is not None:
+			if step % 30 == 0 and step >= 30 and person.job is not None:
 				person.get_salary()	
+				self.update_expectation(person)
 			#print("worker saving: %d\tworking experience: %d" % (person.savings, person.working_experience))
 
 	def update_task_pool(self):
@@ -68,8 +76,8 @@ class world():
 		time_needed = random.randint(7,60)
 		team = []
 		for n in range(2):
-			member = {"job_type": random.choice(JOB_TYPES), 
-				 "experience": random.randint(0,5)
+			member = {"job_type": np.random.choice(JOB_TYPES, p = JOB_PROB), 
+				 "experience": max(0,np.int16(2 + 2*np.random.randn()))
 			}
 			team.append(member)
 		#reward is based on time cost and worker experience
@@ -88,7 +96,7 @@ class world():
 	#check available jobs this person is qualified for
 		available_jobs = [x for x in self.jobs_list if person.working_experience//365 >= x["experience"] 
 							and person.job_type == x["job_type"] 
-							and x["payment"] > person.income
+							and x["payment"] > person.income + 500
 							]
 	
 		if len(available_jobs) > 0:
@@ -106,6 +114,9 @@ class world():
 			person.get_job(config)
 			self.hirers[job_ID].staff_on_board(config, person)
 
+	def update_expectation(self, person):
+		self.worker_expectation[person.job_type].append([max(2500, person.income+1000), person.working_experience//365])
+
 
 if __name__ == "__main__":
 	helloworld = world()
@@ -114,19 +125,19 @@ if __name__ == "__main__":
 
 	print('**company report**')
 	print('')
-	print("staff NUM | fortune | hr_stat")
+	print("rank | staff NUM | fortune | hr_stat")
 	print(":-: | :-: | :-: ")
-	for co in helloworld.hirers.values():
+	for i, co in enumerate(sorted(helloworld.hirers.values(), key = lambda x:x.savings)):
 		#print("staff NUM: %d\tfortune:%d hr_stat: %s" % (len(co.employees), co.savings, str(co.hr_stat)))
-		print("%d | ￥%d |%s" % (len(co.employees), co.savings, str(co.hr_stat)))
+		print("%d | %d | ￥%d |%s" % (i, len(co.employees), co.savings, str(co.hr_stat).strip('{}')))
 	print('')
 	print('**workers report**')
 	print('')
 	print("job_type | experience | salary | fortune")
 	print(":- | :-: | :-: |:-: ")
-	for person in helloworld.workers.values():
+	for person in sorted(helloworld.workers.values(), key= lambda x:x.job_type):
 		if person.savings > 0: 
-			print("%s | %dyear | ￥%d  | ￥%d " % (person.job_type, person.working_experience//365, person.income, person.savings))
+			print("%s | %dy | ￥%d  | ￥%d " % (person.job_type, person.working_experience//365, person.income, person.savings))
 	print('~'*50)
 
 
