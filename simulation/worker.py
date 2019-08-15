@@ -28,6 +28,7 @@ class worker():
 		pass
 
 	def get_salary(self):
-		self.savings += self.income
+		monthly_expense = 2000
+		self.savings += self.income - monthly_expense
 		self.working_experience += 30
 

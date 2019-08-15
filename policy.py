@@ -42,7 +42,7 @@ class world():
 			self.update_task_pool()
 			#random generate task and worker
 		if step % 365 == 0:
-			print("> year: %d, JOB NUM: %d, WORKER NUM: %d, unemployment: %d" % (step//365, len(self.jobs_list), len(self.workers), 
+			print("> year: %d, JOB NUM: %d, WORKER NUM: %d, unemployment: %d   " % (step//365, len(self.jobs_list), len(self.workers), 
 									len([x for x in self.workers.values() if x.job is None])))
 
 		if random.randint(0,50) == 1:
@@ -126,18 +126,19 @@ if __name__ == "__main__":
 	print('**company report**')
 	print('')
 	print("rank | staff NUM | fortune | hr_stat")
-	print(":-: | :-: | :-: ")
+	print(":-: | :-: | :-: | :-: ")
 	for i, co in enumerate(sorted(helloworld.hirers.values(), key = lambda x:x.savings)):
 		#print("staff NUM: %d\tfortune:%d hr_stat: %s" % (len(co.employees), co.savings, str(co.hr_stat)))
 		print("%d | %d | ￥%d |%s" % (i, len(co.employees), co.savings, str(co.hr_stat).strip('{}')))
 	print('')
 	print('**workers report**')
 	print('')
-	print("job_type | experience | salary | fortune")
-	print(":- | :-: | :-: |:-: ")
+	print("job_type | experience | salary | fortune | job_change times")
+	print(":- | :-: | :-: |:-: |:-:")
 	for person in sorted(helloworld.workers.values(), key= lambda x:x.job_type):
 		if person.savings > 0: 
-			print("%s | %dy | ￥%d  | ￥%d " % (person.job_type, person.working_experience//365, person.income, person.savings))
+			print("%s | %dy | ￥%d  | ￥%d | %d " % 
+					(person.job_type, person.working_experience//365, person.income, person.savings, len(person.company_ID)))
 	print('~'*50)
 
 

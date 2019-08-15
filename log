@@ -1,48 +1,48 @@
-year: 0, JOB NUM: 0, WORKER NUM: 20, unemployment: 20
-year: 1, JOB NUM: 38, WORKER NUM: 23, unemployment: 12
-year: 2, JOB NUM: 64, WORKER NUM: 34, unemployment: 16
-year: 3, JOB NUM: 81, WORKER NUM: 39, unemployment: 19
-year: 4, JOB NUM: 93, WORKER NUM: 43, unemployment: 21
-year: 5, JOB NUM: 106, WORKER NUM: 45, unemployment: 21
+> year: 0, JOB NUM: 0, WORKER NUM: 20, unemployment: 20   
+> year: 1, JOB NUM: 49, WORKER NUM: 25, unemployment: 16   
+> year: 2, JOB NUM: 77, WORKER NUM: 32, unemployment: 20   
+> year: 3, JOB NUM: 95, WORKER NUM: 37, unemployment: 17   
+> year: 4, JOB NUM: 112, WORKER NUM: 41, unemployment: 18   
+> year: 5, JOB NUM: 125, WORKER NUM: 49, unemployment: 25   
 **company report**
 
-staff NUM | fortune | hr_stat
-:-: | :-: | :-: 
-6 | ￥419500 |{'recruit': 34, 'onboard': 25, 'leave': 17}
-7 | ￥-41000 |{'recruit': 30, 'onboard': 27, 'leave': 19}
-7 | ￥568000 |{'recruit': 30, 'onboard': 24, 'leave': 15}
-2 | ￥-130500 |{'recruit': 28, 'onboard': 22, 'leave': 20}
-5 | ￥-363500 |{'recruit': 31, 'onboard': 26, 'leave': 18}
+rank | staff NUM | fortune | hr_stat
+:-: | :-: | :-: | :-: 
+0 | 4 | ￥-2086500 |'recruit': 27, 'onboard': 26, 'leave': 21
+1 | 6 | ￥-1151000 |'recruit': 35, 'onboard': 27, 'leave': 20
+2 | 8 | ￥-275500 |'recruit': 36, 'onboard': 27, 'leave': 17
+3 | 4 | ￥126000 |'recruit': 32, 'onboard': 21, 'leave': 16
+4 | 6 | ￥400500 |'recruit': 35, 'onboard': 27, 'leave': 17
 
 **workers report**
 
-job_type | experience | salary | fortune
-:- | :-: | :-: |:-: 
-HR | 5y | ￥10500  | ￥480000 
-HR | 5y | ￥9000  | ￥423000 
-HR | 5y | ￥9000  | ￥412500 
-HR | 2y | ￥7500  | ￥189000 
-HR | 0y | ￥4000  | ￥8000 
-engineer | 5y | ￥15000  | ￥737500 
-engineer | 5y | ￥13500  | ￥685500 
-engineer | 4y | ￥13500  | ￥565500 
-engineer | 4y | ￥13500  | ￥554500 
-engineer | 4y | ￥12000  | ￥518000 
-engineer | 4y | ￥12000  | ￥467000 
-engineer | 3y | ￥12000  | ￥388500 
-engineer | 3y | ￥12000  | ￥382500 
-engineer | 3y | ￥12000  | ￥350500 
-engineer | 3y | ￥12000  | ￥307500 
-engineer | 1y | ￥12000  | ￥193500 
-engineer | 0y | ￥10500  | ￥94500 
-sales | 5y | ￥12000  | ￥565000 
-sales | 4y | ￥12000  | ￥475500 
-sales | 2y | ￥12000  | ￥316500 
-sales | 0y | ￥6000  | ￥36000 
-sales | 0y | ￥6000  | ￥36000 
-web | 5y | ￥7500  | ￥421500 
-web | 4y | ￥7500  | ￥330500 
-web | 4y | ￥7000  | ￥265500 
-web | 3y | ￥5500  | ￥220000 
-web | 0y | ￥4000  | ￥12000 
+job_type | experience | salary | fortune | job_change times
+:- | :-: | :-: |:-: |:-:
+HR | 5y | ￥12500  | ￥576000 | 6 
+HR | 4y | ￥8000  | ￥258000 | 3 
+HR | 3y | ￥8000  | ￥190000 | 4 
+HR | 3y | ￥5000  | ￥91000 | 3 
+HR | 3y | ￥4000  | ￥57000 | 2 
+HR | 2y | ￥4500  | ￥54500 | 2 
+HR | 0y | ￥3000  | ￥3000 | 1 
+engineer | 5y | ￥17500  | ￥791500 | 9 
+engineer | 5y | ￥17500  | ￥735500 | 11 
+engineer | 4y | ￥17500  | ￥708500 | 10 
+engineer | 2y | ￥18000  | ￥429500 | 5 
+engineer | 2y | ￥18000  | ￥401500 | 5 
+engineer | 2y | ￥18000  | ￥257000 | 5 
+engineer | 2y | ￥18000  | ￥191000 | 5 
+engineer | 2y | ￥18000  | ￥133000 | 7 
+engineer | 1y | ￥10500  | ￥115000 | 6 
+engineer | 0y | ￥9000  | ￥37500 | 2 
+engineer | 0y | ￥6000  | ￥4000 | 1 
+sales | 5y | ￥10000  | ￥360000 | 6 
+sales | 5y | ￥10000  | ￥331500 | 6 
+sales | 4y | ￥9500  | ￥292000 | 4 
+sales | 4y | ￥8000  | ￥240500 | 5 
+sales | 2y | ￥8500  | ￥157000 | 4 
+sales | 2y | ￥7000  | ￥125000 | 3 
+web | 4y | ￥10500  | ￥249000 | 6 
+web | 3y | ￥10000  | ￥152000 | 5 
+web | 0y | ￥6000  | ￥36000 | 1 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
